@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💋 Pretty Lashes 💋 | Студия ресниц в Стрежевом</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9d4edd;
+            --secondary: #7b2cbf;
+            --accent: #c77dff;
+            --light: #f8f4ff;
+            --dark: #240046;
+            --text: #333333;
+            --gradient: linear-gradient(135deg, #9d4edd 0%, #7b2cbf 100%);
+            --gradient-light: linear-gradient(135deg, #c77dff 0%, #9d4edd 100%);
+            --shadow: 0 10px 30px rgba(157, 78, 221, 0.15);
+            --shadow-hover: 0 15px 40px rgba(157, 78, 221, 0.25);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 18px 0;
+            box-shadow: 0 4px 20px rgba(123, 44, 191, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo i {
+            font-size: 2.2rem;
+            color: white;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .logo-text h1 {
+            color: white;
+            font-size: 1.7rem;
+            margin-bottom: 5px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .logo-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Мобильное меню */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            padding: 8px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Hero section */
+        .hero {
+            background: var(--gradient), url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(199, 125, 255, 0.3) 0%, transparent 50%);
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .booking-info {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .booking-note {
+            font-size: 1.4rem;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-weight: 500;
+            color: white;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .booking-note .heart {
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Masters section */
+        .section-title {
+            text-align: center;
+            margin: 80px 0 50px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-light);
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+        
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 80px;
+        }
+        
+        .master-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s;
+            width: 100%;
+            position: relative;
+        }
+        
+        .master-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .master-img {
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            background-color: #f5f5f5;
+            position: relative;
+        }
+        
+        .master-img:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+        }
+        
+        .master-info {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .master-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .master-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-light);
+            border-radius: 2px;
+        }
+        
+        .master-info p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .master-bio {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .master-contacts {
+            margin-top: 20px;
+            background: #f9f5ff;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .master-contacts p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+        
+        .master-contacts i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .contact-link {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-link:hover {
+            color: var(--accent);
+        }
+        
+        .tg-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tg-link:hover {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+        
+        .master-booking-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid transparent;
+        }
+        
+        .master-booking-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            background: var(--gradient-light);
+            color: white;
+        }
+        
+        .master-booking-btn i {
+            font-size: 1.3rem;
+        }
+        
+        /* Price section */
+        .price-section {
+            background: linear-gradient(135deg, #f9f5ff 0%, #f0e6ff 100%);
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 25px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .price-tables {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 45px;
+            margin-top: 40px;
+        }
+        
+        .price-table {
+            background-color: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 520px;
+            transition: transform 0.3s;
+            border-top: 5px solid var(--accent);
+        }
+        
+        .price-table:hover {
+            transform: translateY(-5px);
+        }
+        
+        .price-table h4 {
+            margin-bottom: 30px;
+            color: var(--secondary);
+            text-align: center;
+            font-size: 1.8rem;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        .price-table h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient-light);
+            border-radius: 2px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px dashed #e0d6ff;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-item span:first-child {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .price-item span:last-child {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        
+        /* Gallery section */
+        .gallery-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .gallery-info {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow);
+            max-width: 850px;
+            margin: 0 auto;
+            border-top: 5px solid var(--accent);
+        }
+        
+        .gallery-info h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+        
+        .gallery-info p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .tg-channel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.15rem;
+            transition: all 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 8px 25px rgba(157, 78, 221, 0.3);
+        }
+        
+        .tg-channel-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(157, 78, 221, 0.4);
+            background: var(--gradient-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 25px;
+            margin-top: 80px;
+            width: 100%;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .booking-info {
+                font-size: 1.6rem;
+            }
+            
+            .booking-note {
+                font-size: 1.3rem;
+                padding: 20px 30px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .masters-grid {
+                gap: 30px;
+            }
+            
+            .master-img {
+                height: 280px;
+            }
+            
+            .price-tables {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                padding: 20px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+            }
+            
+            .booking-info {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .booking-note {
+                font-size: 1.2rem;
+                padding: 18px 25px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin: 60px 0 40px;
+            }
+            
+            .price-tables {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .price-table {
+                max-width: 100%;
+                padding: 30px;
+            }
+            
+            .gallery-info {
+                padding: 35px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo i {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.9rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            
+            .booking-info {
+                font-size: 1.3rem;
+            }
+            
+            .booking-note {
+                font-size: 1.1rem;
+                padding: 15px 20px;
+            }
+            
+            .master-img {
+                height: 250px;
+            }
+            
+            .master-info {
+                padding: 25px;
+            }
+            
+            .price-table {
+                padding: 25px;
+            }
+            
+            .gallery-info {
+                padding: 25px;
+            }
+            
+            .gallery-info h3 {
+                font-size: 1.7rem;
+            }
+            
+            .gallery-info p {
+                font-size: 1.05rem;
+            }
+            
+            .tg-channel-link {
+                padding: 13px 25px;
+                font-size: 1.05rem;
+            }
+            
+            .footer-content {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .hero h2 {
+                font-size: 1.7rem;
+            }
+            
+            .booking-info {
+                font-size: 1.2rem;
+            }
+            
+            .booking-note {
+                font-size: 1rem;
+                padding: 12px 18px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .master-card {
+                border-radius: 15px;
+            }
+            
+            .master-info h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-eye"></i>
+                <div class="logo-text">
+                    <h1>💋 Pretty Lashes 💋</h1>
+                    <p>Студия ресниц в Стрежевом</p>
+                </div>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#masters">Мастера</a></li>
+                    <li><a href="#prices">Цены</a></li>
+                    <li><a href="#gallery">Работы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Идеальные ресницы в Стрежевом</h2>
+            <p>Самое лучшее наращивание ресниц от топ-мастеров Анастасии и Виктории. Забудьте о туши навсегда!</p>
+            
+            <div class="booking-note">Записаться к лучшим мастерам г. Стрежевого вы можете в разделе <strong>"Наши мастера"</strong> снизу <span class="heart">😍</span></div>
+        </div>
+    </section>
+
+    <!-- Masters section -->
+    <section id="masters" class="container">
+        <h2 class="section-title">Наши мастера</h2>
+        <div class="masters-grid">
+            <div class="master-card">
+                <div class="master-img" style="background-image: url('https://sun9-12.userapi.com/s/v1/ig2/I3gjXsITvLrbWULNw4b2xcsMEI9L6i8f8S58Bns8_KV-LgXon_hcpBHlHVdFT4SY94eA5S86FRscyjyB49w4vQf4.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1621,1280x1921,1440x2161,1706x2560&from=bu&cs=1706x0'); background-size: cover; background-position: center 20%;"></div>
+                <div class="master-info">
+                    <h3>Анастасия</h3>
+                    <div class="master-bio">
+                        <p>Сертифицированный мастер. Специализируется на классическом наращивании и других видах наращивания. Сделает красоту для тебя!</p>
+                    </div>
+                    <div class="master-contacts">
+                        <p><i class="fab fa-telegram"></i> 
+                            <a href="https://t.me/xzxxxzzzxzz" target="_blank" class="tg-link">
+                                @xzxxxzzzxzz
+                            </a>
+                        </p>
+                        <p><i class="fas fa-phone"></i> 
+                            <a href="tel:+79138662503" class="contact-link">
+                                +7 913 866 25 03
+                            </a>
+                        </p>
+                    </div>
+                    <a href="https://dikidi.net/1948971" target="_blank" class="master-booking-btn" style="padding: 12px 28px; font-size: 1.05rem; margin-top: 20px; display: inline-block;">Записаться к Анастасии</a>
+                </div>
+            </div>
+            
+            <div class="master-card">
+                <div class="master-img" style="background-image: url('https://sun9-19.userapi.com/s/v1/ig2/bbczwY_MEMsRzrcx1ZIBJUI4RzIWGMcsrFBDvOmXpd2HP52f9lP76gz7vuzsu38CY8D7slpj2YSJBgpuVaSRaamy.jpg?quality=95&as=32x31,48x46,72x69,108x104,160x154,240x231,360x346,480x461,540x519,640x615,720x692,828x796&from=bu&cs=828x0'); background-size: cover; background-position: center 30%;"></div>
+                <div class="master-info">
+                    <h3>Виктория</h3>
+                    <div class="master-bio">
+                        <p>Эксперт по классическому и гибридному наращиванию. Создает естественный и ухоженный вид на каждый день.</p>
+                    </div>
+                    <div class="master-contacts">
+                        <p><i class="fab fa-telegram"></i> 
+                            <a href="https://t.me/toymina" target="_blank" class="tg-link">
+                                @toymina
+                            </a>
+                        </p>
+                        <p><i class="fas fa-phone"></i> 
+                            <a href="tel:+79138055375" class="contact-link">
+                                +7 913 805 53 75
+                            </a>
+                        </p>
+                    </div>
+                    <a href="https://dikidi.net/1936097" target="_blank" class="master-booking-btn" style="padding: 12px 28px; font-size: 1.05rem; margin-top: 20px; display: inline-block;">Записаться к Виктории</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price section -->
+    <section id="prices" class="price-section">
+        <div class="container">
+            <h2 class="section-title">Наши цены</h2>
+            <div class="price-tables">
+                <div class="price-table">
+                    <h4>Анастасия</h4>
+                    <div class="price-item"><span>Классическое наращивание ≈ 2 ч.</span><span>650 ₽</span></div>
+                    <div class="price-item"><span>1,5 D ≈ 2 ч.</span><span>650 ₽</span></div>
+                    <div class="price-item"><span>2 D ≈ 2 ч.</span><span>700 ₽</span></div>
+                    <div class="price-item"><span>2,5 D ≈ 2 ч. 30 мин.</span><span>750 ₽</span></div>
+                    <div class="price-item"><span>3 D ≈ 3 ч.</span><span>800 ₽</span></div>
+                </div>
+                
+                <div class="price-table">
+                    <h4>Виктория</h4>
+                    <div class="price-item"><span>Классическое наращивание ≈ 2 ч.</span><span>700 ₽</span></div>
+                    <div class="price-item"><span>1,5 D ≈ 2 ч.</span><span>800 ₽</span></div>
+                    <div class="price-item"><span>2 D ≈ 2 ч.</span><span>900 ₽</span></div>
+                    <div class="price-item"><span>2,5 D ≈ 2ч 30 мин.</span><span>1.000 ₽</span></div>
+                    <div class="price-item"><span>3 D ≈ 2 ч. 30 мин.</span><span>1.100 ₽</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery" class="container gallery-section">
+        <h2 class="section-title">Примеры наших работ</h2>
+        <div class="gallery-info">
+            <h3>Посмотрите наши работы</h3>
+            <p>Вы можете увидеть примеры наших работ в нашем TG-канале:</p>
+            <a href="https://t.me/+xga3LIhTBLwyMzYy" target="_blank" class="tg-channel-link">
+                <i class="fab fa-telegram"></i> Перейти в Telegram-канал
+            </a>
+            <p style="margin-top: 25px;">Также можете посмотреть в наших анкетах в DIKIDI внизу.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>💋 Pretty Lashes 💋</h3>
+                    <p style="font-size: 1rem;">Студия наращивания ресниц в Стрежевом. Делаем ваши глазки неотразимыми!</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/+xga3LIhTBLwyMzYy" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="#masters"><i class="fas fa-user"></i> Наши мастера</a></li>
+                        <li><a href="#prices"><i class="fas fa-tag"></i> Цены</a></li>
+                        <li><a href="#gallery"><i class="fas fa-images"></i> Работы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-user"></i> Анастасия: 
+                            <a href="tel:+79138662503">+7 913 866 25 03</a>
+                        </li>
+                        <li><i class="fab fa-telegram"></i> 
+                            <a href="https://t.me/xzxxxzzzxzz" target="_blank">TG Анастасии</a>
+                        </li>
+                        <li><i class="fas fa-user"></i> Виктория: 
+                            <a href="tel:+79138055375">+7 913 805 53 75</a>
+                        </li>
+                        <li><i class="fab fa-telegram"></i> 
+                            <a href="https://t.me/toymina" target="_blank">TG Виктории</a>
+                        </li>
+                        <li><i class="fab fa-telegram"></i> 
+                            <a href="https://t.me/+xga3LIhTBLwyMzYy" target="_blank">TG-канал</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Pretty Lashes. Все права защищены.</p>
+                <p>Фронтенд-разработчик: Лутфуллин Дмитрий Илдарович 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Мобильное меню
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    menuToggle.innerHTML = mainNav.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Закрытие меню при клике на ссылку
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+                
+                // Закрытие меню при клике вне его
+                document.addEventListener('click', (e) => {
+                    if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            }
+            
+            // Плавная прокрутка
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Анимация при скролле
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Наблюдаем за карточками
+            document.querySelectorAll('.master-card, .price-table, .gallery-info').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
